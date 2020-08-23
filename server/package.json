@@ -1,0 +1,14 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "server for mock data",
+	"author": "shengshunyan",
+	"repository": {},
+	"scripts": {
+		"server": "nodemon server.js"
+	},
+	"dependencies": {
+		"express": "",
+		"nodemon": "^1.19.1"
+	}
+}
