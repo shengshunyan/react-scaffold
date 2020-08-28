@@ -11,6 +11,7 @@ app.use('/', (req, res) => {
         root: `${__dirname}/data/`
     }
     const url = req.baseUrl + (req.path || '')
+    // 统一请求路径前缀
     const urlPrefix = '/api/'
     const fileName = `${url.split(urlPrefix)[1]}.json`
     res.sendFile(fileName, options)
