@@ -38,7 +38,7 @@ npm run server
 
 2. 添加编辑器配置项：Code -> Preferences -> Settings -> 搜索 editor.codeActionsOnSave 配置 -> 添加如下配置
 
-    ```Json
+    ```
      {
           "editor.codeActionsOnSave": {
                // For ESLint

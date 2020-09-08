@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PageA from './pages/PageA';
 // import axios from 'axios';
-import './index.scss';
+// import './index.scss';
 
 // import('./person').then(function (person) {
 //     // 渲染页面
@@ -18,7 +19,11 @@ class Component extends React.PureComponent {
 
     render() {
         return (
-            <div className="title">Hello Parcel</div>
+            <div className="title">
+                Hello Parcel
+
+                <PageA />
+            </div>
         );
     }
 }
