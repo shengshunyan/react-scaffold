@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// babel polyfill
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+
 import PageA from './pages/PageA';
 // import axios from 'axios';
 // import './index.scss';

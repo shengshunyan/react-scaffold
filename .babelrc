@@ -3,9 +3,21 @@
         [
             "@babel/preset-env",
             {
-                "modules": false
+                "targets": {
+                    "chrome": "49",
+                    "firefox": "65",
+                    "safari": "12",
+                    "node": "current"
+                },
+                "modules": false,
+                "useBuiltIns": "usage",
+                "corejs": "3"
             }
         ],
-        "@babel/preset-react"
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime"
     ]
 }
