@@ -1,35 +1,32 @@
+/**
+ * @desc 项目入口js文件
+ * @author shengshunyan
+ * @date 2020-09-10
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-// babel polyfill
+// 引入babel polyfill
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+// 引入router组件
+import {
+    BrowserRouter as Router,
+} from 'react-router-dom';
+// 引入antd组件库
+import 'antd/dist/antd.css';
+// 项目资源
+import './index.scss';
+import App from './components/app';
 
-import PageA from './pages/PageA';
-// import axios from 'axios';
-// import './index.scss';
-
-// import('./person').then(function (person) {
-//     // 渲染页面
-//     person.sayHello()
-// })
-
-class Component extends React.PureComponent {
-    componentDidMount() {
-        // axios.get('/api/datasource')
-        //     .then(function (res) {
-        //         console.log(res);
-        //     })
-    }
-
-    render() {
-        return (
-            <div className="title">
-                Hello Parcel
-
-                <PageA />
-            </div>
-        );
-    }
+function Root() {
+    return (
+        <div className="root-container">
+            <Router>
+                <App />
+            </Router>
+        </div>
+    );
 }
 
-ReactDOM.render(<Component />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'));
