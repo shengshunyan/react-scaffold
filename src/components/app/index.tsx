@@ -22,7 +22,7 @@ const Antd = lazy(() => import(/* webpackChunkName: "Antd" */'../../modules/antd
 
 const { Header, Content, Footer } = Layout;
 
-function App() {
+const App: React.FunctionComponent = () => {
     return (
         <Layout className={style['app-container']}>
             <Header>
@@ -59,7 +59,6 @@ function App() {
                         </Route>
                         <Route path={url.app.antd.path}>
                             <Suspense fallback={<div>loading</div>}>
-                                <Todo />
                                 <Antd />
                             </Suspense>
                         </Route>
@@ -73,6 +72,6 @@ function App() {
             <Footer>Ant Design ©2018 Created by Ant UED</Footer>
         </Layout>
     );
-}
+};
 
 export default App;

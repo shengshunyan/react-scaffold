@@ -6,10 +6,10 @@
 
 import React from 'react';
 
-function Todo() {
+const Todo: React.FunctionComponent = () => {
     return (
         <div>this is todo page</div>
     );
-}
+};
 
 export default Todo;

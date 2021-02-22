@@ -6,10 +6,10 @@
 
 import React from 'react';
 
-function Index() {
+const Index: React.FunctionComponent = () => {
     return (
         <div>this is index page</div>
     );
-}
+};
 
 export default Index;

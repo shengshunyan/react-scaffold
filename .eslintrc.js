@@ -1,9 +1,8 @@
 module.exports = {
     // 禁用持续查找,一旦发现了配置文件就停止对父文件夹的查找
     root: true,
-    extends: 'airbnb',
-    // babel-eslint使eslint支持es6语法
-    parser: 'babel-eslint',
+    extends: ['plugin:@typescript-eslint/recommended'],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
     // 设置为 "script" (默认) 或 "module"（如果你的代码是 ECMAScript 模块)。
         sourceType: 'module',
@@ -25,7 +24,7 @@ module.exports = {
         es2020: true, // 启用除了 modules 以外的所有 ECMAScript 2020 特性
     },
     plugins: [
-        'react',
+        '@typescript-eslint',
         'react-hooks',
     ],
     // 脚本在执行期间访问的额外的全局变量: true表示变量可以被覆盖，false表示不允许被覆盖
@@ -100,16 +99,6 @@ module.exports = {
         'object-curly-newline': 'off',
         'new-cap': ['error', { properties: false, capIsNew: false }],
         'no-useless-escape': 'off',
-
-        // React 参考eslint-config-airbnb下的rules/react.js
-        // jsx代码使用4个空格的缩进风格
-        'react/jsx-indent': ['error', 4],
-        // jsx属性使用4个空格的缩进风格
-        'react/jsx-indent-props': ['error', 4],
-        // 使用了jsx语法的js代码文件其扩展名可以使用js或jsx
-        'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
-        // 无状态和没有使用生命周期的组件使用函数组件声明
-        'react/prefer-stateless-function': ['error', { ignorePureComponents: false }],
         // 数组索引可以用作key
         'react/no-array-index-key': 'off',
         // 组件属性可以传any,array,object
@@ -124,11 +113,6 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         // 关闭路径处理依赖
         'import/no-cycle': 'off',
-        // 扩展名处理
-        'import/extensions': ['error', {
-            js: 'never',
-            jsx: 'never',
-        }],
         // 可以使用html，有一些场景，后端会发一些html到前端需要渲染
         'react/no-danger': 'off',
         // 当它们只有一个参数时，箭头函数省略括号
