@@ -46,6 +46,7 @@
     "antd": "^4.6.3",
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "easy-peasy": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

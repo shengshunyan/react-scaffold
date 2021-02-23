@@ -1,0 +1,46 @@
+.footer-container {
+    position: relative;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    color: #777777;
+
+    &::before {
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        height: 50px;
+        box-shadow: 0 1px 1px rgb(0 0 0 / 20%),
+            0 8px 0 -3px #f6f6f6,
+            0 9px 1px -3px rgb(0 0 0 / 20%),
+            0 16px 0 -6px #f6f6f6,
+            0 17px 2px -6px rgb(0 0 0 / 20%);
+        content: "";
+    }
+
+    :global {
+        .middle {
+            display: flex;
+
+            > section {
+                padding: 3px 7px;
+                border: 1px solid transparent;
+                margin: 0 3px;
+                cursor: pointer;
+
+                &.active {
+                    border-color: rgba(175, 47, 47, 0.2);
+                }
+            }
+        }
+
+        .right {
+            cursor: pointer;
+        }
+    }
+}

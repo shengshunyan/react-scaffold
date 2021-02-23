@@ -16,4 +16,4 @@ const Antd: React.FunctionComponent = () => {
     );
 };
 
-export default Antd;
+export default React.memo(Antd);

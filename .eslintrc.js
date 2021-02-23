@@ -57,13 +57,6 @@ module.exports = {
         'no-restricted-syntax': ['error', 'WithStatement'],
         // 可以使用++/--
         'no-plusplus': 'off',
-        // 禁止未使用过的变量包括全局变量和函数中的最后一个参数必须使用
-        'no-unused-vars': [
-            'error', {
-                vars: 'all',
-                args: 'after-used',
-            },
-        ],
         // 使用单引号
         quotes: [
             'error', 'single',

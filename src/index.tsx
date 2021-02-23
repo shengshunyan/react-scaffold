@@ -6,6 +6,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { StoreProvider } from 'easy-peasy';
 // 引入babel polyfill
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -16,15 +17,18 @@ import {
 // 引入antd组件库
 import 'antd/dist/antd.css';
 // 项目资源
-import './index.scss';
+import store from './common/store';
 import App from './components/app';
+import './index.scss';
 
 function Root() {
     return (
         <div className="root-container">
-            <Router>
-                <App />
-            </Router>
+            <StoreProvider store={store}>
+                <Router>
+                    <App />
+                </Router>
+            </StoreProvider>
         </div>
     );
 }

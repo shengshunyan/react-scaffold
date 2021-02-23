@@ -17,7 +17,7 @@ import style from './index.scss';
 
 // react原生支持的代码分割：lazy 和 Suspense
 const Index = lazy(() => import(/* webpackChunkName: "Index" */'../../modules/index'));
-const Todo = lazy(() => import(/* webpackChunkName: "Todo" */'../../modules/todo'));
+const Todo = lazy(() => import(/* webpackChunkName: "Todo" */'../../modules/todo/components/main'));
 const Antd = lazy(() => import(/* webpackChunkName: "Antd" */'../../modules/antd'));
 
 const { Header, Content, Footer } = Layout;
@@ -74,4 +74,4 @@ const App: React.FunctionComponent = () => {
     );
 };
 
-export default App;
+export default React.memo(App);

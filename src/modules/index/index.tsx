@@ -12,4 +12,4 @@ const Index: React.FunctionComponent = () => {
     );
 };
 
-export default Index;
+export default React.memo(Index);
