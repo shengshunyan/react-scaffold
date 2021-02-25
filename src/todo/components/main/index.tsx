@@ -7,7 +7,7 @@
 import React, { useEffect } from 'react';
 import { createTypedHooks } from 'easy-peasy';
 
-import { StoreModel } from '../../../../common/store';
+import { StoreModel } from '../../../common/store';
 import Header from '../header';
 import Input from '../input';
 import List from '../list';

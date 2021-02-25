@@ -10,7 +10,7 @@ import { CloseOutlined } from '@ant-design/icons';
 import { createTypedHooks } from 'easy-peasy';
 
 import { TodoItemModel } from '../../common/model';
-import { StoreModel } from '../../../../common/store';
+import { StoreModel } from '../../../common/store';
 
 import style from './index.scss';
 
@@ -25,8 +25,8 @@ const List: React.FunctionComponent<IProps> = ({
 }) => {
     const { updateTodoItem, deleteTodoItem } = useStoreActions(actions => actions.todo);
 
-    const onIsFinishedChange = useCallback((e, item) => {
-        updateTodoItem({ ...item, isFinished: e.target.checked });
+    const onIsFinishedChange: (value: boolean, item: TodoItemModel) => void = useCallback((value, item) => {
+        updateTodoItem({ ...item, isFinished: value });
     }, [updateTodoItem]);
 
     const onItemDelete = useCallback(item => {
@@ -40,7 +40,7 @@ const List: React.FunctionComponent<IProps> = ({
                     <div className="list-item" key={index}>
                         <Checkbox 
                             checked={item.isFinished}
-                            onChange={e => onIsFinishedChange(e, item)}
+                            onChange={e => onIsFinishedChange(e.target.checked, item)}
                         >{item.content}</Checkbox>
                         <CloseOutlined 
                             onClick={() => onItemDelete(item)}

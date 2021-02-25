@@ -7,7 +7,7 @@
 import React from 'react';
 import { createTypedHooks } from 'easy-peasy';
 
-import { StoreModel } from '../../../../common/store';
+import { StoreModel } from '../../../common/store';
 import { TodoListFilterType } from '../../common/enum';
 
 import style from './index.scss';

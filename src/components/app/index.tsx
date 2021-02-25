@@ -16,9 +16,9 @@ import url from '../../common/url';
 import style from './index.scss';
 
 // react原生支持的代码分割：lazy 和 Suspense
-const Index = lazy(() => import(/* webpackChunkName: "Index" */'../../modules/index'));
-const Todo = lazy(() => import(/* webpackChunkName: "Todo" */'../../modules/todo/components/main'));
-const Antd = lazy(() => import(/* webpackChunkName: "Antd" */'../../modules/antd'));
+const Index = lazy(() => import(/* webpackChunkName: "Index" */'../../home'));
+const Todo = lazy(() => import(/* webpackChunkName: "Todo" */'../../todo/components/main'));
+const Antd = lazy(() => import(/* webpackChunkName: "Antd" */'../../antd'));
 
 const { Header, Content, Footer } = Layout;
 

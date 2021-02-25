@@ -7,7 +7,7 @@
 import React, { useCallback, useState } from 'react';
 import { createTypedHooks } from 'easy-peasy';
 
-import { StoreModel } from '../../../../common/store';
+import { StoreModel } from '../../../common/store';
 
 import style from './index.scss';
 

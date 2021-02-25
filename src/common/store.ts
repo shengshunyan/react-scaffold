@@ -5,7 +5,7 @@
  */
 
 import { createStore } from 'easy-peasy';
-import todo, { TodoModel } from '../modules/todo/store';
+import todo, { TodoModel } from '../todo/store';
 
 export interface StoreModel {
     todo: TodoModel;
