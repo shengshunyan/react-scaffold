@@ -6,6 +6,7 @@
   "scripts": {
     "start": "rm -rf .dev/ && node build/dev.js",
     "build": "rm -rf dist/ && parcel build src/index.html --no-source-maps --experimental-scope-hoisting",
+    "lint": "eslint src --fix",
     "test": "jest"
   },
   "keywords": [],

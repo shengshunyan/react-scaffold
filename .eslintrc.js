@@ -78,6 +78,8 @@ module.exports = {
         ],
         // 关闭require()强制在模块顶部调用（NodeJs rules， 9.0之后全部使用import）
         'global-require': 'off',
+        // 不允许多余的空格
+        'no-multi-spaces': 'error',
 
         // ES6 rules
         // 箭头函数的箭头前后都要有空格

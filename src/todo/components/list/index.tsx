@@ -38,13 +38,13 @@ const List: React.FunctionComponent<IProps> = ({
             {
                 todoList.map((item, index) => (
                     <div className="list-item" key={index}>
-                        <Checkbox 
+                        <Checkbox
                             checked={item.isFinished}
                             onChange={e => onIsFinishedChange(e.target.checked, item)}
                         >{item.content}</Checkbox>
-                        <CloseOutlined 
+                        <CloseOutlined
                             onClick={() => onItemDelete(item)}
-                            className="delete-icon" 
+                            className="delete-icon"
                         />
                     </div>
                 ))
