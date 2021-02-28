@@ -15,9 +15,9 @@ const url = {
             path: '/app',
             title: '权限页',
         },
-        index: {
-            path: '/app/index',
-            title: '首页',
+        home: {
+            path: '/app/home',
+            title: 'home',
         },
         todo: {
             path: '/app/todo',

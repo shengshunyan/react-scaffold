@@ -11,22 +11,38 @@ jobs:
     name: install、test、build and deploy
 
     steps:
-      - uses: actions/checkout@master
+      # 拉取最新master分支代码
+      - name: checkout master branch
+        uses: actions/checkout@master
 
+      # 下载node.js环境
       - name: set node environment
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm i
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run build
-      
-      - name: deploy
+
+      # 安装项目依赖
+      - name: install node modules
+        run: npm i
+
+      # 检查代码格式规范
+      - name: check eslint
+        run: npm run lint
+
+      # 运行单元测试
+      - name: run unit testing
+        run: npm run test
+
+      # 构建前端资源包
+      - name: build package
+        run: npm run build
+
+      # 部署到服务器
+      - name: deploy to the server
         uses: garygrossgarten/github-action-scp@release
         with:
             local: dist
-            remote: /root/dist
+            remote: /opt/application/todo
             host: ${{ secrets.SSH_HOST }}
             username: ${{ secrets.SSH_USER }}
             password: ${{ secrets.PASSWORD }}

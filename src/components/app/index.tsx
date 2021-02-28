@@ -16,7 +16,7 @@ import url from '../../common/url';
 import style from './index.scss';
 
 // react原生支持的代码分割：lazy 和 Suspense
-const Index = lazy(() => import(/* webpackChunkName: "Index" */'../../home'));
+const Home = lazy(() => import(/* webpackChunkName: "Home" */'../../home'));
 const Todo = lazy(() => import(/* webpackChunkName: "Todo" */'../../todo/components/main'));
 const Antd = lazy(() => import(/* webpackChunkName: "Antd" */'../../antd'));
 
@@ -27,9 +27,9 @@ const App: React.FunctionComponent = () => {
         <Layout className={style['app-container']}>
             <Header>
                 <div className="logo" />
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[url.app.index.path]}>
-                    <Menu.Item key={url.app.index.path}>
-                        <Link to={url.app.index.path}>{url.app.index.title}</Link>
+                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[url.app.home.path]}>
+                    <Menu.Item key={url.app.home.path}>
+                        <Link to={url.app.home.path}>{url.app.home.title}</Link>
                     </Menu.Item>
                     <Menu.Item key={url.app.todo.path}>
                         <Link to={url.app.todo.path}>{url.app.todo.title}</Link>
@@ -47,9 +47,9 @@ const App: React.FunctionComponent = () => {
                 </Breadcrumb>
                 <div className="site-layout-content">
                     <Switch>
-                        <Route path={url.app.index.path}>
+                        <Route path={url.app.home.path}>
                             <Suspense fallback={<div>loading</div>}>
-                                <Index />
+                                <Home />
                             </Suspense>
                         </Route>
                         <Route path={url.app.todo.path}>
@@ -64,7 +64,7 @@ const App: React.FunctionComponent = () => {
                         </Route>
                         <Route
                             path={url.app.root.path}
-                            render={() => <Redirect to={url.app.index.path} />}
+                            render={() => <Redirect to={url.app.home.path} />}
                         />
                     </Switch>
                 </div>
