@@ -60,7 +60,7 @@ module.exports = {
         // 统一用双引号
         'string-quotes': 'double',
         'time-min-milliseconds': 100,
-        'unit-blacklist': ['pt'],
+        'unit-disallowed-list': ['pt'],
         // 属性value小写
         'value-keyword-case': 'lower',
         'value-list-comma-newline-before': 'never-multi-line',
