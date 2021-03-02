@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "start": "rm -rf .dev/ && node build/dev.js",
     "build": "rm -rf dist/ && parcel build src/index.html --no-source-maps",
+    "deploy": "rm -rf dist/ && parcel build src/index.html --no-source-maps && node ./build/local-deploy.js",
     "lint": "eslint src --fix && stylelint src/**/*.scss --fix",
-    "test": "jest",
-    "prepare": "husky install"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
