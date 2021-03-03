@@ -5,18 +5,16 @@
  */
 
 import React from 'react';
-import { createTypedHooks } from 'easy-peasy';
+import { useStoreState, useStoreActions } from 'easy-peasy';
 
 import { StoreModel } from '../../../common/store';
 import { TodoListFilterType } from '../../common/enum';
 
 import style from './index.scss';
 
-const { useStoreState, useStoreActions } = createTypedHooks<StoreModel>();
-
 const Footer: React.FunctionComponent = () => {
-    const { itemLeftCount, listFilter } = useStoreState(state => state.todo);
-    const { updateListFilter, deleteCompletedItems } = useStoreActions(actions => actions.todo);
+    const { itemLeftCount, listFilter } = useStoreState<StoreModel>(state => state.todo);
+    const { updateListFilter, deleteCompletedItems } = useStoreActions<StoreModel>(actions => actions.todo);
 
     return (
         <div className={style['footer-container']}>

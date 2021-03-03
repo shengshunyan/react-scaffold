@@ -5,16 +5,14 @@
  */
 
 import React, { useCallback, useState } from 'react';
-import { createTypedHooks } from 'easy-peasy';
+import { useStoreActions } from 'easy-peasy';
 
 import { StoreModel } from '../../../common/store';
 
 import style from './index.scss';
 
-const { useStoreActions } = createTypedHooks<StoreModel>();
-
 const Input: React.FunctionComponent = () => {
-    const { addTodoItem } = useStoreActions(actions => actions.todo);
+    const { addTodoItem } = useStoreActions<StoreModel>(actions => actions.todo);
 
     const [value, setValue] = useState('');
 

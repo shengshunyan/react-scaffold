@@ -7,14 +7,12 @@
 import React, { useCallback } from 'react';
 import { Checkbox } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
-import { createTypedHooks } from 'easy-peasy';
+import { useStoreActions } from 'easy-peasy';
 
 import { TodoItemModel } from '../../common/model';
 import { StoreModel } from '../../../common/store';
 
 import style from './index.scss';
-
-const { useStoreActions } = createTypedHooks<StoreModel>();
 
 interface IProps {
     todoList: TodoItemModel[];
@@ -23,7 +21,7 @@ interface IProps {
 const List: React.FunctionComponent<IProps> = ({
     todoList,
 }) => {
-    const { updateTodoItem, deleteTodoItem } = useStoreActions(actions => actions.todo);
+    const { updateTodoItem, deleteTodoItem } = useStoreActions<StoreModel>(actions => actions.todo);
 
     const onIsFinishedChange: (value: boolean, item: TodoItemModel) => void = useCallback((value, item) => {
         updateTodoItem({ ...item, isFinished: value });
