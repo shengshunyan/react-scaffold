@@ -1,3 +1,9 @@
+/**
+ * @desc parcel config when develop in local
+ * @author shengshunyan
+ * @date 2021-03-03
+ */
+
 const ParcelProxyServer = require('parcel-proxy-server');
 
 // parcel可配置属性参考：https://zh.parceljs.org/api.html
