@@ -2,3 +2,5 @@
 /.dev/
 /build/
 /*.js
+server
+__integration_test__
