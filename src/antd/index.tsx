@@ -8,10 +8,14 @@ import React from 'react';
 import { Button } from 'antd';
 
 const Antd: React.FunctionComponent = () => {
+    const onClick = () => {
+        throw new Error('test error');
+    };
+
     return (
         <div>
             this is antd page
-            <Button type="primary">Button</Button>
+            <Button type="primary" onClick={onClick}>Button</Button>
         </div>
     );
 };

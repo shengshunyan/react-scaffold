@@ -4,7 +4,7 @@
  * @date 2020-09-10
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { StoreProvider } from 'easy-peasy';
 // 引入babel polyfill
@@ -22,6 +22,16 @@ import App from './components/app';
 import './index.scss';
 
 function Root() {
+    /**
+     * @desc webfunny前端监控系统所需信息
+     * userId 代表用户的唯一标识，手机号，用户名，只要能够表示用户唯一性的就行
+     * userTag 代表用户的标签，比如：公司A, 公司B；等级1, 等级2 等等
+     * projectVersion 代表你项目发布的版本号，用于排查具体版本的错误
+     */
+    useEffect(() => {
+        window.localStorage.wmUserInfo = JSON.stringify({ userId: 'userId', userTag: 'tag', projectVersion: '1.0.1' });
+    }, []);
+
     return (
         <div className="root-container">
             <StoreProvider store={store}>

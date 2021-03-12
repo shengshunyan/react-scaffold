@@ -4,3 +4,4 @@
 /*.js
 server
 __integration_test__
+src/monitor.js
